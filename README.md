@@ -5,6 +5,15 @@
 2. Dynamic Programming
 3. Trees
 4. Trie
+5. Binary Search
+6. LinkedList
+7. Array
+8. Greedy Algorithm
+9. Recursion & Backtracking
+10. Heaps
+11. Stack and Queue
+12. Binary Tree
+    
 
 #### Node.JS
 1. Event Loop
