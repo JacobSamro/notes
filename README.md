@@ -1,18 +1,23 @@
-## Just some notes ( Draft )
+## Just some notes on my career path
+
+- Few are from my interviews
+- Few are from my preparations
+- Few are from the courses I took
+- And few are from ChatGPT
 
 
-    
+### Index   
 
-1. DSA [->](/DSA.md)
-2. JavaScript & Node.JS [>](/JavaScript%20&%20Node.md)
-3. Frontend
-4. Databases
-5. System Design
-6. Software Architect
+1. [DSA](/DSA.md)
+2. [JavaScript & Node.JS](/JavaScript%20&%20Node.md)
+3. [Frontend](/Frontend.md)
+4. [Databases](/Databases.md)
+5. [System Design](/System%20Design.md)
+6. [Software Architect](/Software%20Architect.md)
 
 
 
-#### Web Technologies
+#### Web Technologies ( Draft )
 
 1. WebRTC
 Uses UDP for Video, Audio
