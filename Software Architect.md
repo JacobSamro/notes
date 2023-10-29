@@ -1,3 +1,22 @@
+
+
+
+### Test Driven Development
+
+- Build with Confidence
+- Clean Code
+- Avoid code breaks and ship safe
+- That itself acts as a proof that app works well
+
+Jest
+1. Unit Testing
+2. Snapshot Testing
+3. async
+4. sync
+
+Ava
+
+
 As a tech product architect, it is crucial to have a broad and deep understanding of various technological domains. Apart from the areas you mentioned (event streaming, scalability, API design, system design, and database), here are some other important categories you should focus on:
 
 1. **Cloud Computing and Services:**
