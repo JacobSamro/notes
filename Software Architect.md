@@ -1,5 +1,174 @@
 
+### S.O.L.I.D Principle
 
+A set of design principles in object-oriented programming that, when followed properly, can lead to more understandable, flexible, and maintainable code. Let's break down each principle with a simple explanation and a JavaScript example.
+
+### 1. **Single Responsibility Principle (SRP)**
+A class should have one, and only one, reason to change. This means a class should only have one job or responsibility.
+
+**Example:**
+Instead of having a class that handles both user data and user data validation, you should separate them.
+
+```javascript
+// Bad
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    isValidAge() {
+        return this.age >= 18;
+    }
+}
+
+// Good
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class UserValidator {
+    static isValidAge(user) {
+        return user.age >= 18;
+    }
+}
+```
+
+### 2. **Open/Closed Principle (OCP)**
+Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+
+**Example:**
+Instead of modifying an existing class to add new functionality, you should extend it.
+
+```javascript
+// Bad
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+}
+
+// Good
+class Shape {
+    area() {
+        throw new Error("Area method should be implemented in derived classes");
+    }
+}
+
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+}
+```
+
+### 3. **Liskov Substitution Principle (LSP)**
+Objects of a superclass should be able to be replaced with objects of a subclass without affecting the correctness of the program.
+
+**Example:**
+All derived classes should be substitutable for their base class.
+
+```javascript
+class Bird {
+    fly() {
+        console.log("Flying...");
+    }
+}
+
+class Ostrich extends Bird {
+    fly() {
+        throw new Error("Can't fly");
+    }
+}
+
+// This might cause problems if we expect all birds to fly.
+```
+
+A better approach would be to have different types or interfaces for flying and non-flying birds.
+
+### 4. **Interface Segregation Principle (ISP)**
+Clients should not be forced to depend on interfaces they do not use.
+
+**Example:**
+Instead of one large interface, split it into smaller and more specific interfaces.
+
+```javascript
+// Bad
+class Worker {
+    work() {}
+    eat() {}
+}
+
+// Good
+class Worker {
+    work() {}
+}
+
+class Eater {
+    eat() {}
+}
+```
+
+### 5. **Dependency Inversion Principle (DIP)**
+High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces).
+
+**Example:**
+Instead of having high-level modules depend on low-level ones, use abstractions.
+
+```javascript
+// Bad
+class LightBulb {
+    turnOn() {}
+    turnOff() {}
+}
+
+class Switch {
+    constructor(bulb) {
+        this.bulb = bulb;
+    }
+
+    operate() {
+        // ...
+    }
+}
+
+// Good
+class SwitchableDevice {
+    turnOn() {}
+    turnOff() {}
+}
+
+class LightBulb extends SwitchableDevice {
+    turnOn() {}
+    turnOff() {}
+}
+
+class Switch {
+    constructor(device) {
+        this.device = device;
+    }
+
+    operate() {
+        // ...
+    }
+}
+```
+
+By following the SOLID principles, you can ensure that your codebase remains clean, scalable, and easy to maintain.
 
 ### Test Driven Development
 
@@ -8,13 +177,15 @@
 - Avoid code breaks and ship safe
 - That itself acts as a proof that app works well
 
-Jest
+#### Test Frameworks
+
+##### Jest
 1. Unit Testing
 2. Snapshot Testing
 3. async
 4. sync
 
-Ava
+##### Ava
 
 
 As a tech product architect, it is crucial to have a broad and deep understanding of various technological domains. Apart from the areas you mentioned (event streaming, scalability, API design, system design, and database), here are some other important categories you should focus on:
