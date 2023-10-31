@@ -83,6 +83,8 @@ Objects of a superclass should be able to be replaced with objects of a subclass
 All derived classes should be substitutable for their base class.
 
 ```javascript
+
+// Wrong
 class Bird {
     fly() {
         console.log("Flying...");
@@ -99,6 +101,47 @@ class Ostrich extends Bird {
 ```
 
 A better approach would be to have different types or interfaces for flying and non-flying birds.
+
+```javascript
+// Base class for all birds
+class Bird {
+    move() {
+        console.log("Moving...");
+    }
+}
+
+// Flying birds
+class FlyingBird extends Bird {
+    fly() {
+        console.log("Flying...");
+    }
+}
+
+// Non-flying birds
+class NonFlyingBird extends Bird {
+    walk() {
+        console.log("Walking...");
+    }
+}
+
+class Sparrow extends FlyingBird {
+    // Additional behaviors specific to Sparrow
+}
+
+class Ostrich extends NonFlyingBird {
+    // Additional behaviors specific to Ostrich
+}
+
+const bird1 = new Sparrow();
+bird1.move();  // Outputs: Moving...
+bird1.fly();   // Outputs: Flying...
+
+const bird2 = new Ostrich();
+bird2.move();  // Outputs: Moving...
+bird2.walk();  // Outputs: Walking...
+
+
+```
 
 ### 4. **Interface Segregation Principle (ISP)**
 Clients should not be forced to depend on interfaces they do not use.
@@ -130,42 +173,65 @@ High-level modules should not depend on low-level modules. Both should depend on
 Instead of having high-level modules depend on low-level ones, use abstractions.
 
 ```javascript
-// Bad
-class LightBulb {
-    turnOn() {}
-    turnOff() {}
-}
-
-class Switch {
-    constructor(bulb) {
-        this.bulb = bulb;
-    }
-
-    operate() {
-        // ...
+// Step 1: Define Payment Interface
+class PaymentInterface {
+    processPayment(amount) {
+        throw new Error("processPayment method not implemented");
     }
 }
 
-// Good
-class SwitchableDevice {
-    turnOn() {}
-    turnOff() {}
-}
+// Step 2: Implement Stripe and PayPal Classes
 
-class LightBulb extends SwitchableDevice {
-    turnOn() {}
-    turnOff() {}
-}
-
-class Switch {
-    constructor(device) {
-        this.device = device;
+class StripePayment extends PaymentInterface {
+    constructor(apiKey) {
+        super();
+        this.apiKey = apiKey;
     }
 
-    operate() {
-        // ...
+    processPayment(amount) {
+        // Logic to process payment with Stripe
+        console.log(`Processing ${amount} payment with Stripe using API key: ${this.apiKey}`);
     }
 }
+
+class PayPalPayment extends PaymentInterface {
+    constructor(authToken) {
+        super();
+        this.authToken = authToken;
+    }
+
+    processPayment(amount) {
+        // Logic to process payment with PayPal
+        console.log(`Processing ${amount} payment with PayPal using Auth token: ${this.authToken}`);
+    }
+}
+
+// Step 3: PaymentProcessor Class
+
+class PaymentProcessor {
+    constructor(paymentService) {
+        if (!(paymentService instanceof PaymentInterface)) {
+            throw new Error("Invalid payment service provided");
+        }
+        this.paymentService = paymentService;
+    }
+
+    makePayment(amount) {
+        this.paymentService.processPayment(amount);
+    }
+}
+
+// Usage:
+
+const stripePaymentService = new StripePayment("YOUR_STRIPE_API_KEY");
+const payPalPaymentService = new PayPalPayment("YOUR_PAYPAL_AUTH_TOKEN");
+
+const stripeProcessor = new PaymentProcessor(stripePaymentService);
+stripeProcessor.makePayment(100);  // Outputs: Processing 100 payment with Stripe using API key: YOUR_STRIPE_API_KEY
+
+const payPalProcessor = new PaymentProcessor(payPalPaymentService);
+payPalProcessor.makePayment(200);  // Outputs: Processing 200 payment with PayPal using Auth token: YOUR_PAYPAL_AUTH_TOKEN
+
 ```
 
 By following the SOLID principles, you can ensure that your codebase remains clean, scalable, and easy to maintain.
