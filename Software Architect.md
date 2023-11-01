@@ -1,3 +1,54 @@
+### Design Patterns
+
+#### Creational:
+1. Singleton
+2. Factory Method
+3. Abstract Factory
+4. Builder
+5. Prototype
+
+#### Structural:
+1. Adapter
+2. Bridge
+3. Composite
+4. Decorator
+5. Facade
+6. Flyweight
+7. Proxy
+
+#### Behavioral:
+1. Observer
+2. Mediator
+3. Command
+4. State
+5. Strategy
+6. Chain of Responsibility
+7. Template Method
+8. Visitor
+9. Interpreter
+10. Memento
+11. Iterator
+
+
+### Architectural Patterns
+1. Layered (or N-tier) Architecture
+2. Event-Driven Architecture
+3. Microkernel Architecture
+4. Microservices Architecture
+5. Space-Based (or Cloud) Architecture
+6. Monolithic Architecture
+7. Peer-to-Peer (P2P) Architecture
+8. Service-Oriented Architecture (SOA)
+9. Hexagonal Architecture (or Ports and Adapters)
+10. Blackboard Architecture
+11. Pipe and Filter Architecture
+12. Broker Architecture
+13. Model-View-Controller (MVC)
+14. Model-View-Presenter (MVP)
+15. Model-View-ViewModel (MVVM)
+16. CQRS (Command Query Responsibility Segregation)
+17. Lambda Architecture
+18. Big Ball of Mud
 
 ### S.O.L.I.D Principle
 
@@ -236,7 +287,57 @@ payPalProcessor.makePayment(200);  // Outputs: Processing 200 payment with PayPa
 
 By following the SOLID principles, you can ensure that your codebase remains clean, scalable, and easy to maintain.
 
-### Test Driven Development
+
+
+## Domain-Driven Design (DDD)
+
+DDD is an approach to software development that emphasizes collaboration between domain experts and software developers to create a domain model that solves real-world problems. The main goal is to tackle complex software projects by focusing on the domain's core concepts and logic.
+
+1. **Talk the Same Language:** Everyone involved, whether they are tech experts or business experts, should use the same terms and language when discussing the project. This ensures clarity and avoids confusion.
+  
+2. **Understand the Domain:** Before writing any code, take the time to understand the business or area you're working in. What are its main parts and rules? 
+
+3. **Break Things Down:** Separate the big problem into smaller, more manageable parts. This makes it easier to work on.
+
+4. **Use Real-World Concepts in Code:** When coding, use names and structures that reflect real-world concepts. For instance, if you're building a library system, you might have code objects like "Book" and "Borrower."
+
+5. **Protect Your Data:** Group related data together and set rules about how and when it can be changed.
+
+6. **Stay Flexible:** As you learn more or as things change, be ready to adjust your code to keep it aligned with the business needs.
+
+In short, DDD is about building software that mirrors the real-world needs and structures of a business or domain, ensuring everyone is on the same page, and making sure the software remains relevant and adaptable.
+
+## HLD vs LLD
+
+High-Level Design (HLD) and Low-Level Design (LLD) are two critical phases in the software design process. Here are 5 key points for each:
+
+### High-Level Design (HLD):
+
+1. **Overview and Abstraction**: HLD provides a high-level view of the system, which focuses on how the components interact with each other. It's more about what the system should do, rather than how it should do it.
+ 
+2. **Components Identification**: At this level, the system is divided into smaller sub-systems or modules and their interactions are defined. For example, in a banking software system, modules could be Account Management, Transaction Management, User Interface, and Database Management.
+
+3. **Technology Independent**: HLD doesn't go into the details of specific technologies or tools. It focuses on the architecture and design patterns.
+
+4. **For Stakeholders**: HLD is typically used for communication with stakeholders (like clients, project managers, and team leads) who need a general understanding of the system without getting into the nitty-gritty technical details.
+
+5. **Architectural Diagrams**: Diagrams like system architecture diagrams, data flow diagrams, and ER diagrams are often used in HLD to represent the overall structure and relationships.
+
+### Low-Level Design (LLD):
+
+1. **Detail-Oriented**: LLD delves into the details of how the system will be built. It's all about how the system should achieve what's defined in the HLD.
+
+2. **Data Structures and Algorithms**: At this level, specific data structures to be used, algorithms to be followed, and the class design (in OOP) are defined. It involves decisions like whether to use an array or a linked list, or which sorting algorithm to use.
+
+3. **Technology Specific**: LLD might include details specific to the chosen technologies, like database schema design, API endpoints definitions, or library-specific configurations.
+
+4. **For Developers**: LLD is primarily for the developers who will be building the software. It gives them a clear picture of what needs to be coded and how.
+
+5. **Detailed Diagrams**: LLD often includes class diagrams, sequence diagrams, state diagrams, and detailed pseudocode.
+
+In summary, while HLD provides a bird's-eye view of the system, focusing on the "what", LLD dives deep into the "how", providing a roadmap for developers to build the system.
+
+## Test Driven Development
 
 - Build with Confidence
 - Clean Code
@@ -253,6 +354,7 @@ By following the SOLID principles, you can ensure that your codebase remains cle
 
 ##### Ava
 
+## What should I know as Software Architect ?
 
 As a tech product architect, it is crucial to have a broad and deep understanding of various technological domains. Apart from the areas you mentioned (event streaming, scalability, API design, system design, and database), here are some other important categories you should focus on:
 
@@ -316,28 +418,68 @@ As a tech product architect, it is crucial to have a broad and deep understandin
 20. **Product Lifecycle Management:**
     - Familiarize yourself with the stages of product development, from ideation to end-of-life, and best practices for each stage.
 
-### S.O.L.I.D Principle
+## Common Questions
 
-    The SOLID principles are a set of design principles in object-oriented programming that help software developers create more maintainable, understandable, and flexible systems. They are:
+How do you prove your solution is working ?
 
-1. **Single Responsibility Principle (S):** 
-   - A class should have one and only one reason to change, meaning that a class should only have one job or responsibility.
+ANSWER : THE IMPLEMENTED SOLUTION
 
-2. **Open/Closed Principle (O):** 
-   - Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means that the behavior of a module can be extended without modifying its source code.
+A software architect will typically showcase a combination of artifacts, demonstrations, and metrics to prove that a system is working as intended. Here are some of the items they might present:
 
-3. **Liskov Substitution Principle (L):** 
-   - Objects or instances of subclasses should be able to replace instances of the parent class without affecting the correctness of the program. This means that a derived class must be substitutable for its base class.
+1. **System Documentation and Design Artifacts:**
+   - **Architecture Diagrams:** Visual representation of the system's components and their interactions.
+   - **Design Patterns Used:** A description of the patterns used and why they were chosen.
+   - **API Documentation:** Details on how different parts of the system communicate.
+   - **Data Flow Diagrams:** Visualization of how data moves through the system.
 
-4. **Interface Segregation Principle (I):** 
-   - A class should not be forced to implement interfaces it does not use. This means that a client should not be forced to depend on interfaces it does not use.
+2. **Working Demonstrations:**
+   - **Prototype or MVP (Minimum Viable Product):** A basic version of the software that showcases its main features.
+   - **Use Case Demos:** Specific scenarios in which the software is used to solve a given problem.
+   - **Integration Demos:** Showing how the system works with other systems.
 
-5. **Dependency Inversion Principle (D):** 
-   - High-level modules should not depend on low-level modules. Both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions. This means that one should depend on abstractions, not on concretions.
+3. **Automated Test Results:**
+   - **Unit Tests:** These test individual components of the system in isolation.
+   - **Integration Tests:** Tests that ensure different parts of the system work together.
+   - **System Tests:** Tests the system as a whole.
+   - **Performance Tests:** Measures how the system performs under load.
+   - **Security Tests:** Ensures the system is secure from various vulnerabilities.
+
+4. **Metrics and Monitoring Dashboards:**
+   - **Performance Metrics:** E.g., response times, throughput, and latency.
+   - **Reliability Metrics:** E.g., uptime, mean time between failures (MTBF), and mean time to recovery (MTTR).
+   - **Usage Metrics:** Data on how often certain features are used, user behavior, etc.
+   - **Error and Exception Reports:** Details on errors that have occurred and how often they happen.
+
+5. **Feedback from Stakeholders:**
+   - **User Feedback:** Direct input from end-users on system functionality and usability.
+   - **Stakeholder Reviews:** Feedback from project stakeholders, such as product owners, managers, or clients.
+
+6. **Scalability and Load Testing Results:**
+   - Details on how the system performs under increased load.
+   - Potential bottlenecks and their solutions.
+
+7. **Compliance and Certification:**
+   - **Audit Reports:** Results from any external audits, especially for systems that need to adhere to specific regulations.
+   - **Certifications:** E.g., ISO standards or industry-specific certifications that the software adheres to.
+
+8. **Backup and Disaster Recovery Protocols:**
+   - Demonstrations of backup procedures and how the system can be restored after a catastrophic event.
+   - Documentation on disaster recovery plans and their testing results.
+
+9. **Continuous Integration/Continuous Deployment (CI/CD) Pipelines:**
+   - Demonstrations of how code changes are automatically tested and deployed to production.
+
+10. **Cost and Resource Utilization Reports:**
+   - Details on how resources (like CPU, memory, storage) are being used and the associated costs.
+
+In essence, the combination of concrete evidence (like test results and metrics), demonstrations, and stakeholder feedback provides a comprehensive view of the system's health and functionality.
+
+
+## MCQs
+
 
 As a tech product architect, your role is to have a holistic understanding of various technologies and how they can be integrated to create a cohesive and successful product. Stay curious, keep learning, and always be open to new ideas and technologies.
 
-Certainly! Here are 50 potential interview questions for a software product architect:
 
 ### General and Behavioral Questions:
 1. How did you become interested in software architecture?
@@ -410,9 +552,9 @@ Certainly! Here are 50 potential interview questions for a software product arch
 50. How do you approach integrating AI or machine learning components into a project?
 
 
-Of course! Let me complete each category with 20 questions and short answers:
 
 ### Event Streaming:
+
 11. **What is backpressure, and how do you handle it in streaming?**
     - Answer: Backpressure refers to the buildup of data when it is produced faster than it can be processed. It can be handled by buffering, dropping, or throttling incoming data.
 
@@ -444,6 +586,7 @@ Of course! Let me complete each category with 20 questions and short answers:
     - Answer: By using encryption protocols such as TLS and ensuring secure authentication and authorization mechanisms.
 
 ### Scalability:
+
 1. **What strategies do you use to handle peak loads in a system?**
    - Answer: Load balancing, horizontal scaling, and capacity planning.
 
@@ -507,6 +650,7 @@ Of course! Let me complete each category with 20 questions and short answers:
 
 
 ### API Design:
+
 1. **How do you handle versioning in API design?**
    - Answer: Using URI versioning, custom request headers, or content negotiation.
 
@@ -568,6 +712,7 @@ Of course! Let me complete each category with 20 questions and short answers:
     - Answer: A developer portal provides documentation, SDKs, and tools to help developers integrate with the API.
 
 ### System Design:
+
 1. **How do you approach designing a system for high availability?**
    - Answer: By using redundancy, failover mechanisms, and distributed architectures.
 
@@ -604,9 +749,7 @@ Of course! Let me complete each category with 20 questions and short answers:
 12. **What are some common security considerations in system design?**
     - Answer: Data encryption, user authentication, and secure communication channels.
 
-13. **How do you
-
- handle versioning in microservices architecture?**
+13. **How do you handle versioning in microservices architecture?**
     - Answer: By using semantic versioning, backward compatibility, or API gateways with version management.
 
 14. **What is the role of a load balancer in system design?**
@@ -631,6 +774,7 @@ Of course! Let me complete each category with 20 questions and short answers:
     - Answer: Load balancing, caching, database optimization, and efficient algorithms.
 
 ### Database:
+
 1. **What are the differences between SQL and NoSQL databases?**
    - Answer: SQL databases are relational, ACID-compliant, and use structured data, whereas NoSQL databases are non-relational, may not be fully ACID-compliant, and can handle unstructured data.
 
@@ -692,9 +836,9 @@ Of course! Let me complete each category with 20 questions and short answers:
     - Answer: Data normalization is the process of organizing data to reduce redundancy and improve data integrity. It is important to ensure consistent and efficient data access.
 
 
-Certainly! Here are some questions and brief answers for each category:
 
 ### Cloud Computing and Services:
+
 1. **What are the main services offered by AWS, Azure, and GCP?**
    - Answer: AWS offers EC2, S3, RDS, etc.; Azure offers Virtual Machines, Blob Storage, SQL Database, etc.; GCP offers Compute Engine, Cloud Storage, Cloud SQL, etc.
    
@@ -756,6 +900,7 @@ Certainly! Here are some questions and brief answers for each category:
     - Answer: A cloud-native application is designed to run in a cloud environment, taking full advantage of cloud resources.
 
 ### Machine Learning and AI:
+
 1. **What is the difference between AI and machine learning?**
    - Answer: AI is a broad concept of machines mimicking human intelligence, while machine learning is a subset of AI that focuses on data analysis and algorithms to enable learning.
    
