@@ -78,6 +78,10 @@ Improving the throughput of Apache Kafka is a common objective when dealing with
 6. **What is the role of Zookeeper in Kafka?**
    - Zookeeper is used for managing broker metadata, leader election, and keeping track of node failures. It helps in maintaining the distributed nature of Kafka.
 
+   Note : Zookeeper is going to be removed very soon. 
+
+   TODO: 
+
 7. **What are Kafka Producers and Consumers?**
    - Producers push data to topics. Consumers read data from topics.
 
@@ -219,9 +223,15 @@ Improving the throughput of Apache Kafka is a common objective when dealing with
 - DATEDIFF
 - HAVING
 
+#### MCQs - MySQL
+
 3. Redis
 
+#### MCQs - Redis
+
 4. PostgresSQL
+
+#### MCQs - PostGres
 
 1. MySQL vs NoSQL
 - 
@@ -238,3 +248,5 @@ Advantages over MySQL
 - Open Source License
 
 5. MongoDB
+
+#### MCQs - MongoDB

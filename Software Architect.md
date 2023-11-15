@@ -1,3 +1,25 @@
+## The Architect
+
+The titles "Software Architect," "Product Architect," and "Solutions Architect" reflect different roles within the technology industry, each with a unique focus and set of responsibilities:
+
+1. **Software Architect**: 
+   - **Focus**: This role is primarily concerned with the architecture of software systems.
+   - **Responsibilities**: A Software Architect makes high-level design choices and dictates technical standards, including software coding standards, tools, and platforms. They are involved in the design and development phases of complex systems, often requiring hands-on work in programming, troubleshooting, and managing technical challenges.
+
+2. **Product Architect**:
+   - **Focus**: The Product Architect is focused on the technical vision and design of a particular product.
+   - **Responsibilities**: They are responsible for aligning the product’s strategy with its technical execution, ensuring the product can scale, meet market needs, and adhere to constraints. They work closely with product management to translate business requirements into technical solutions.
+
+3. **Solutions Architect**:
+   - **Focus**: Solutions Architects are concerned with solving specific business problems with architecture and design solutions that integrate various components of a system.
+   - **Responsibilities**: They design the architecture of a system that fits a particular business context, considering the integration of different pieces such as hardware, software, cloud services, and other technologies. They often work with external clients and stakeholders to understand their needs and translate them into technical requirements.
+
+In practice, the boundaries between these roles can be fluid, and the titles are sometimes used interchangeably or combined depending on the organization's size, structure, and projects. Here are some key differences:
+
+- **Breadth of Focus**: Software Architects may focus on the technical aspects of software development, while Product Architects have a broader view, including the business aspects related to a particular product. Solutions Architects need to understand various systems and how they can be integrated to address broader business issues.
+- **Scope of Influence**: Software Architects are typically focused on the inner workings of software systems, Product Architects influence the product lifecycle from a technical perspective, and Solutions Architects influence how different products and systems work together to create a comprehensive solution.
+- **Interaction with Stakeholders**: Software Architects often interact with the development team, Product Architects with the product management and development teams, and Solutions Architects with clients, sales teams, and the development team to ensure that the solution fits the client’s environment and needs.
+
 ### Design Patterns
 
 #### Creational:
@@ -49,6 +71,56 @@
 16. CQRS (Command Query Responsibility Segregation)
 17. Lambda Architecture
 18. Big Ball of Mud
+19. Event Sourcing
+
+
+## Domain-Driven Design (DDD)
+
+DDD is an approach to software development that emphasizes collaboration between domain experts and software developers to create a domain model that solves real-world problems. The main goal is to tackle complex software projects by focusing on the domain's core concepts and logic.
+
+1. **Talk the Same Language:** Everyone involved, whether they are tech experts or business experts, should use the same terms and language when discussing the project. This ensures clarity and avoids confusion.
+  
+2. **Understand the Domain:** Before writing any code, take the time to understand the business or area you're working in. What are its main parts and rules? 
+
+3. **Break Things Down:** Separate the big problem into smaller, more manageable parts. This makes it easier to work on.
+
+4. **Use Real-World Concepts in Code:** When coding, use names and structures that reflect real-world concepts. For instance, if you're building a library system, you might have code objects like "Book" and "Borrower."
+
+5. **Protect Your Data:** Group related data together and set rules about how and when it can be changed.
+
+6. **Stay Flexible:** As you learn more or as things change, be ready to adjust your code to keep it aligned with the business needs.
+
+In short, DDD is about building software that mirrors the real-world needs and structures of a business or domain, ensuring everyone is on the same page, and making sure the software remains relevant and adaptable.
+
+## HLD vs LLD
+
+High-Level Design (HLD) and Low-Level Design (LLD) are two critical phases in the software design process. Here are 5 key points for each:
+
+### High-Level Design (HLD):
+
+1. **Overview and Abstraction**: HLD provides a high-level view of the system, which focuses on how the components interact with each other. It's more about what the system should do, rather than how it should do it.
+ 
+2. **Components Identification**: At this level, the system is divided into smaller sub-systems or modules and their interactions are defined. For example, in a banking software system, modules could be Account Management, Transaction Management, User Interface, and Database Management.
+
+3. **Technology Independent**: HLD doesn't go into the details of specific technologies or tools. It focuses on the architecture and design patterns.
+
+4. **For Stakeholders**: HLD is typically used for communication with stakeholders (like clients, project managers, and team leads) who need a general understanding of the system without getting into the nitty-gritty technical details.
+
+5. **Architectural Diagrams**: Diagrams like system architecture diagrams, data flow diagrams, and ER diagrams are often used in HLD to represent the overall structure and relationships.
+
+### Low-Level Design (LLD):
+
+1. **Detail-Oriented**: LLD delves into the details of how the system will be built. It's all about how the system should achieve what's defined in the HLD.
+
+2. **Data Structures and Algorithms**: At this level, specific data structures to be used, algorithms to be followed, and the class design (in OOP) are defined. It involves decisions like whether to use an array or a linked list, or which sorting algorithm to use.
+
+3. **Technology Specific**: LLD might include details specific to the chosen technologies, like database schema design, API endpoints definitions, or library-specific configurations.
+
+4. **For Developers**: LLD is primarily for the developers who will be building the software. It gives them a clear picture of what needs to be coded and how.
+
+5. **Detailed Diagrams**: LLD often includes class diagrams, sequence diagrams, state diagrams, and detailed pseudocode.
+
+In summary, while HLD provides a bird's-eye view of the system, focusing on the "what", LLD dives deep into the "how", providing a roadmap for developers to build the system.
 
 ### S.O.L.I.D Principle
 
@@ -289,53 +361,7 @@ By following the SOLID principles, you can ensure that your codebase remains cle
 
 
 
-## Domain-Driven Design (DDD)
 
-DDD is an approach to software development that emphasizes collaboration between domain experts and software developers to create a domain model that solves real-world problems. The main goal is to tackle complex software projects by focusing on the domain's core concepts and logic.
-
-1. **Talk the Same Language:** Everyone involved, whether they are tech experts or business experts, should use the same terms and language when discussing the project. This ensures clarity and avoids confusion.
-  
-2. **Understand the Domain:** Before writing any code, take the time to understand the business or area you're working in. What are its main parts and rules? 
-
-3. **Break Things Down:** Separate the big problem into smaller, more manageable parts. This makes it easier to work on.
-
-4. **Use Real-World Concepts in Code:** When coding, use names and structures that reflect real-world concepts. For instance, if you're building a library system, you might have code objects like "Book" and "Borrower."
-
-5. **Protect Your Data:** Group related data together and set rules about how and when it can be changed.
-
-6. **Stay Flexible:** As you learn more or as things change, be ready to adjust your code to keep it aligned with the business needs.
-
-In short, DDD is about building software that mirrors the real-world needs and structures of a business or domain, ensuring everyone is on the same page, and making sure the software remains relevant and adaptable.
-
-## HLD vs LLD
-
-High-Level Design (HLD) and Low-Level Design (LLD) are two critical phases in the software design process. Here are 5 key points for each:
-
-### High-Level Design (HLD):
-
-1. **Overview and Abstraction**: HLD provides a high-level view of the system, which focuses on how the components interact with each other. It's more about what the system should do, rather than how it should do it.
- 
-2. **Components Identification**: At this level, the system is divided into smaller sub-systems or modules and their interactions are defined. For example, in a banking software system, modules could be Account Management, Transaction Management, User Interface, and Database Management.
-
-3. **Technology Independent**: HLD doesn't go into the details of specific technologies or tools. It focuses on the architecture and design patterns.
-
-4. **For Stakeholders**: HLD is typically used for communication with stakeholders (like clients, project managers, and team leads) who need a general understanding of the system without getting into the nitty-gritty technical details.
-
-5. **Architectural Diagrams**: Diagrams like system architecture diagrams, data flow diagrams, and ER diagrams are often used in HLD to represent the overall structure and relationships.
-
-### Low-Level Design (LLD):
-
-1. **Detail-Oriented**: LLD delves into the details of how the system will be built. It's all about how the system should achieve what's defined in the HLD.
-
-2. **Data Structures and Algorithms**: At this level, specific data structures to be used, algorithms to be followed, and the class design (in OOP) are defined. It involves decisions like whether to use an array or a linked list, or which sorting algorithm to use.
-
-3. **Technology Specific**: LLD might include details specific to the chosen technologies, like database schema design, API endpoints definitions, or library-specific configurations.
-
-4. **For Developers**: LLD is primarily for the developers who will be building the software. It gives them a clear picture of what needs to be coded and how.
-
-5. **Detailed Diagrams**: LLD often includes class diagrams, sequence diagrams, state diagrams, and detailed pseudocode.
-
-In summary, while HLD provides a bird's-eye view of the system, focusing on the "what", LLD dives deep into the "how", providing a roadmap for developers to build the system.
 
 ## Test Driven Development
 
@@ -1209,3 +1235,64 @@ As a tech product architect, your role is to have a holistic understanding of va
 20. **What is a composite key?**
     - Answer: A composite key is a primary key composed of two or more columns used to uniquely identify a record.
 
+
+
+## Document Structure
+
+Document Architecture ( Center of Architect's Work )
+
+1. Background
+- For Team and Management
+- Briefly disucss from business point of the view
+
+Why ?
+- Helps to validate the idea / requirement
+
+2. Requirements
+- Functional
+- Non Functional ( Performance, Load, Data Volume, SLA )
+
+Why ?
+- Validate the understanding of requirements
+
+3. Executive Summary ( Exes, QA, C Level, Project Manager )
+- For Non Technical Summary
+- 
+
+Why ?
+- Making the management confident about the work
+- Boost the condient of your work
+- Low Technical Document
+- Understand and write from their point of view
+- Use Charts and Diagrams
+- Do not repeat yourself
+
+4. Architecure Overview ( High Level Overview , Upto 10 Pages, Development and QA Lead )
+- Provide high level overview
+- Presents the architecture to team
+- No deep dive innto specific components
+
+- Type ( Web, Microservice, REST API )
+- NF Requirements ( Eg, 100 Req, Sec)
+- High Level Diagram ( Datastore, Interactions )
+
+5. Components ( Core of Arch, Tech, Development Team )
+- Component Role
+- Technology Stack
+    - Database
+    - Frontend
+    - Backend
+    - Services
+- Component Architecture
+    - Describe the APIs
+    - Describe the Layers
+    - Dependency Injection
+    - Use visualisations and detailing
+- Development Instruction
+    - Usage of Specific library
+    - Suggest to document APIs
+    - Dos and Dont's
+
+
+
+6. Executive Summary
