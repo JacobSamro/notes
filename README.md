@@ -16,6 +16,12 @@
 6. [Software Architect](/Software%20Architect.md)
 
 
+### Useful Resources
+
+1. leetcode solutions - [doocs/leetcode](https://doocs-leetcode.vercel.app/#/README_EN?id=_1-basic-algorithms)
+2. design patterns ( js, web, vue ) - [patterns.dev](https://patterns.dev) 
+3. design patterns ( general ) - [refactoring.guru](https://refactoring.guru)
+
 
 #### Web Technologies ( Draft )
 
