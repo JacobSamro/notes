@@ -597,3 +597,100 @@ Promise.race([promise1, promise2, promise3])
 
 ```
 
+
+
+### 15. Pass by value vs Pass by reference
+
+primitives ( string, number, booleans) are passed by value, 
+objects are passed by reference
+
+1. pass by value
+
+```javascript
+"use strict"
+var a = 1
+
+function hello(a) { // copy of a is passed
+    a = 2
+}
+
+hello(a)
+
+console.log(a) // prints 1
+```
+
+
+2. pass by reference
+
+```javascript
+"use strict"
+var a = { name: 'apple'}
+
+function hello(a) { // reference of a is passed
+    a.name = 'google' // you can only change the property
+    // a = { name : 'google' } - will not work
+}
+
+hello(a)
+
+console.log(a) // { name: "apple" }
+```
+
+
+### 16. Rest Operator
+
+- used in function signatures
+- introduced in ES6
+
+```javascript
+
+function sum() {
+    console.log(arguments)
+    // can loop and add the total
+    // note arguments is not an actual array, doesn't even have slice function
+} 
+
+sum(1,2,3,4)
+
+// prints 1,2,3,4
+```
+
+```javascript
+
+function action(type, ...args) {
+    console.log(type, args)
+} 
+
+action('sum', 1,2,3,4)
+
+// prints "sum", 1,2,3,4
+```
+
+rest parameter should be the last parameter.
+
+
+### 17. Spread Operator
+
+1. concat, merge
+```javascript
+var a = [ 1, 2, 3]
+var b = [ 4, 5, 6, ...a]
+
+console.log(b) // 4, 5, 6, 1, 2, 3
+
+// [...a, 4, 5, 6 ] - 1, 2, 3, 4, 5, 6
+// [ 4, ...a, 5, 6 ] - 4, 1, 2, 3, 5, 6
+
+```
+
+2. Coping an array
+
+```javascript
+var arl = [4, 5, 6];
+var ar2 = [...ar1]; // ar2 = ar1 won't copy as they point to the exact same thing, changing array 1 will change array 2
+ar1[0] = -1;
+console.log(ar1) // -1, 5, 6 
+console.log(ar2) // 4, 5, 6
+```
+
+### 18. 
