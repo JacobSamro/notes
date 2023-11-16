@@ -23,6 +23,9 @@
 10. Anonymous Function
 11. Object Literals
 12. List of Global Functions
+13. strict mode vs non strict mode
+14. Promise.all vs Promise.allSettled vs Promise.race
+
 
 
 ### 1. Event Loop
@@ -525,6 +528,19 @@ apple(); // Outputs 'undefined'
 In strict mode, `this` inside a function that is not a method or does not have a defined context will be `undefined` instead of the global object. So, `abc()` and `apple()` will both log 'undefined'.
 
 In strict mode, assigning a value to an undeclared variable (like `this.value = 'apple';`) will throw an error, as strict mode does not allow implicit global variable declarations. This helps prevent potential bugs and makes the code more predictable and easier to debug.
+
+
+| non strict                                             | strict mode                                                                                        |
+|--------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| a = 'hello'  // a will be assigned to window           | "use strict" a = 'hello' // throws error, you have you use var or let                              |
+|                                                        | // non strict mode function hello(){  "use strict" // this is also possible   // strict mode }     |
+| var let = 1 // works                                   | "use strict"  var let = 1 // let is a reserved keyword  ( ES6 )                                    |
+| var a = 1 delete a  function hello() {} delete hello   | "use strict"  // you cannot delete variables or functions                                          |
+| function hello(a, b ) {   delete a   delete b }        | "use strict"  function hello(a, b ) {   delete a // throws error   delete b // throws error }      |
+| var eval = 1                                           | "use strict"  var eval = 1 // unexpected eval or args                                              |
+| var a = 2 eval("var a = 1") console.log(a) // prints 1 | "use strict"  var a = 2  eval("var a = 1") // a stays in the eval scope console.log(a) // prints 2 |
+|                                                        |                                                                                                    |
+|                                                        |                                                                                                    |
 
 ### 14. Promise.all vs Promise.allSettled vs Promise.race
 
