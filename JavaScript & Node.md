@@ -2,7 +2,28 @@
 
 1. Event Loop
 2. Clusters
-3. 
+3. process in Node.JS
+4. global in Node.JS
+5. process.nextTick
+6. process - events
+7. streams
+8. How do you debug in Node.JS ? 
+9. zlib
+
+## JavaScript ( Index )
+1. Hoisting
+2. Closure
+3. EventEmitter
+4. map vs reduce vs filter
+5. setTimeout, setInterval, setImmeidate
+6. function vs arrow function
+7. var, let, const
+8. call, apply, bind
+9. Scopes
+10. Anonymous Function
+11. Object Literals
+12. List of Global Functions
+
 
 ### 1. Event Loop
 
@@ -223,12 +244,7 @@ compressAndDecompress(sampleData);
 
    
 
-## JavaScript ( Index )
-1. Hoisting
-2. Closure
-3. EventEmitter
-4. map vs reduce vs filter
-5. setTimeout, setInterval, setImmeidate
+
 
 ### 1. Hoisting
 
