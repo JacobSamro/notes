@@ -216,14 +216,14 @@ class Bird {
 
 class Ostrich extends Bird {
     fly() {
-        throw new Error("Can't fly");
+        throw new Error("Ostrich can't fly");
     }
 }
 
 // This might cause problems if we expect all birds to fly.
 ```
 
-A better approach would be to have different types or interfaces for flying and non-flying birds.
+A better approach would be to have a common move function for all Birds.
 
 ```javascript
 // Base class for all birds
@@ -233,35 +233,26 @@ class Bird {
     }
 }
 
-// Flying birds
-class FlyingBird extends Bird {
-    fly() {
+// Flying bird
+class Sparrow extends Bird {
+    move() {
         console.log("Flying...");
     }
 }
 
-// Non-flying birds
-class NonFlyingBird extends Bird {
-    walk() {
+// Non-flying bird
+class Ostrich extends Bird {
+    move() {
         console.log("Walking...");
     }
 }
 
-class Sparrow extends FlyingBird {
-    // Additional behaviors specific to Sparrow
-}
-
-class Ostrich extends NonFlyingBird {
-    // Additional behaviors specific to Ostrich
-}
-
+// make birds move
 const bird1 = new Sparrow();
-bird1.move();  // Outputs: Moving...
-bird1.fly();   // Outputs: Flying...
+bird1.move();  // Outputs: Flying...
 
 const bird2 = new Ostrich();
-bird2.move();  // Outputs: Moving...
-bird2.walk();  // Outputs: Walking...
+bird2.move();  // Outputs: Walking...
 
 
 ```
